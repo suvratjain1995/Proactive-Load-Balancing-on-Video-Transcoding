@@ -82,7 +82,7 @@ class Server:
 
     #Get name as Name + # + id ; Random id for every Server
     def get_unique_name(self):
-        return str(self.name) + "#" + str(self.id)
+        return str(self.name)
 
         
 def capacity_cmp(self, other):
@@ -100,8 +100,8 @@ if __name__ == '__main__':
     host = socket.gethostname()  # '127.0.0.1' can also be used
     serverfile = open('server.txt')
     lines = serverfile.readlines()
-    taskfile = open('test.txt')
-    tlines = taskfile.readlines()
+    #taskfile = open('test.txt')
+    #tlines = taskfile.readlines()
 
     server_s = []
     task_types = []
@@ -158,8 +158,11 @@ if __name__ == '__main__':
             
                 
         if(server_assign.assign(tline.execution)):
-            print tline.name+" assigned to Server : "+server_assign.get_unique_name()
+            #print tline.name+" assigned to Server : "+server_assign.get_unique_name()
             #port = server_assign.port
+            print server_assign.name
+            
+            print " assigned " +tline.name
             port = server_assign.port
             #9999
             # Creating the socket

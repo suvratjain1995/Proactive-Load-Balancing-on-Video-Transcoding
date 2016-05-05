@@ -66,13 +66,13 @@ def machine_learn(test_data):
 	
 	test_data = np.array(test_data)
 	#train_data = preprocessing.scale(train_data)
-	print test_data
+	#print test_data
 	scalar = preprocessing.StandardScaler().fit(train_data)
 	train_data = scalar.transform(train_data)
 
 	test_data = scalar.transform(test_data)
 
-	print test_data
+	#print test_data
 
 	#print train_data
 	#print test_data
